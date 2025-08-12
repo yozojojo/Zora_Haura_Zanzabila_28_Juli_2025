@@ -50,20 +50,46 @@
     button:hover {
       background-color: #00008B;
     }
+    
+    .error{
+        color: red;
+        font-size: 15px;
+    }
   </style>
 </head>
 <body>
 
   <div class="login-container">
     <h1>Login</h1>
-    <form>
-      <input type="text" placeholder="Masukkan Username" required />
-      <input type="password" placeholder="Masukkan Password" required />
-      
+    <form id="Djojo_o">
+      <input type="text" id="username" placeholder="Masukkan Username" />
+      <input type="password" id="password" placeholder="Masukkan Password" />
       <button type="submit">Login</button>
+      <div id="eror-message" class="error"></div>
       <p>Belum punya akun? <a href="#">Daftar akun</a></p>
     </form>
   </div>
+  
+<script>
+    document.getElementById("Djojo_o").addEventListener('submit', function(event) {
+        event.preventDefault(); //Mencegah form untuk submit secara default
+    
+        //Mendapatkan nilai username dan password
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var erormessage = document.getElementById('eror-message');
+     
+        //Validasi Username dan password
+        if (username === '' || password === '') {
+            erormessage.textContent = 'saskehh tidaa suka kosong sayangkuu!!';
+        } else if (username !== 'Jojo' || password !=='123') {
+            erorMessage.textContent = 'username atau password salah';
+        } else {
+            erorMessage.textContent = ''
+            alert('anjayy berhasil!!');
+        }
+    });
+</script>
 
 </body>
 </html>
